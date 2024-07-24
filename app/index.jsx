@@ -26,6 +26,7 @@ const index = () => {
               <Text className="text-secondary-200 border">
                 Aora
               </Text>
+              
             </Text>
 
           </View>
