@@ -5,9 +5,13 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../constants'
 import CustomBtn from '../components/CustomBtn'
 import { StatusBar } from 'react-native'
+import { useGlobalContext } from '../context/GlobalProvider'
 
 const index = () => {
   
+  const { isLoading, isLoggedIn } = useGlobalContext()
+
+  if (!isLoading && isLoggedIn) return <Redirect href='/home' />
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: '100%' }}>
@@ -39,7 +43,7 @@ const index = () => {
           <CustomBtn containerStyles="w-full mt-7" title="Continue with Email " handlePress={() => { router.push('/signIn') }} />
         </View>
       </ScrollView>
-      <StatusBar hidden={true}  />
+      <StatusBar backgroundColor="black" barStyle={'light-content'} />
     </SafeAreaView>
   )
 }

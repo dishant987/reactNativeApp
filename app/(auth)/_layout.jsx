@@ -2,6 +2,7 @@ import { Text, View } from 'react-native'
 import React from 'react'
 import { Stack } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
+import FlashMessage from 'react-native-flash-message'
 
 const AuthLayout = () => {
   return (
@@ -16,7 +17,7 @@ const AuthLayout = () => {
           options={{ headerShown: false }}
         />
       </Stack>
-      
+      <FlashMessage position={'center'} />
     </>
   )
 }
