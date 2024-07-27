@@ -27,7 +27,7 @@ const SignUp = () => {
       const result = await createUser(form.email, form.password, form.username)
       setUser(result);
       setIsLogged(true);
-      console.log("signup client : ",result)
+      // console.log("signup client : ",result)
       
       router.replace('/signIn')
     } catch (error) {
